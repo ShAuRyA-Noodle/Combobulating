@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Aura wordmark — square format, 800 x 800.
+  Wordmark "aura" centred horizontally and vertically.
+  Single sunset-orange hand-drawn-feel underline, 4 px stroke.
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 800 800"
+     width="800" height="800"
+     role="img"
+     aria-label="Aura wordmark logo square">
+  <title>Aura</title>
+  <desc>Square format Aura wordmark for avatar / profile use.</desc>
+
+  <rect x="0" y="0" width="800" height="800" fill="none"/>
+
+  <text x="400" y="440"
+        text-anchor="middle"
+        font-family="Fraunces, 'Fraunces 9pt', Georgia, 'Times New Roman', serif"
+        font-size="240"
+        font-weight="400"
+        font-style="normal"
+        fill="#0E0E0E"
+        letter-spacing="-4">aura</text>
+
+  <path d="M 230 490 Q 400 504 570 488"
+        stroke="#FF5B2E"
+        stroke-width="4"
+        stroke-linecap="round"
+        fill="none"/>
+</svg>

@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Aura — Anticipate. Act. Stay quiet.</title>
+<meta name="description" content="An on-device empathetic intelligence layer for Indian Gen Z. Built by Galaxy Brain at Thapar Institute for Samsung EnnovateX 2026." />
+<meta name="theme-color" content="#FAF8F5" />
+<link rel="icon" type="image/svg+xml" href="assets/aura_logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<a class="skip" href="#main">skip to content</a>
+
+<header class="topbar" role="banner">
+  <a class="brand" href="#01" aria-label="Aura, home">
+    <img src="assets/aura_logo.svg" alt="" width="28" height="28" />
+    <span>Aura</span>
+  </a>
+  <nav class="nav" aria-label="primary">
+    <a href="#03">why</a>
+    <a href="#04">wedges</a>
+    <a href="#05">architecture</a>
+    <a href="#07">evidence</a>
+    <a href="#08">team</a>
+    <a href="#10">links</a>
+  </nav>
+</header>
+
+<main id="main" class="bento" role="main">
+
+  <!-- 01 HERO -->
+  <section id="01" class="tile tile-hero" aria-labelledby="hero-title">
+    <span class="tile-num">01</span>
+    <span class="kicker">an on-device empathetic intelligence layer for indian gen z, built for samsung ennovatex 2026.</span>
+    <h1 id="hero-title" class="hero-word">
+      Aura
+      <svg class="underline" viewBox="0 0 320 18" aria-hidden="true">
+        <path d="M4 11 C 60 4, 130 16, 200 8 S 300 6, 316 12" fill="none" stroke="#FF5B2E" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+    </h1>
+    <p class="tagline">Anticipate. Act. Stay quiet.</p>
+    <p class="lede">Four agents. One orchestrator. One Reasoning Trace. Memory the user owns.</p>
+  </section>
+
+  <!-- 02 FRICTION -->
+  <section id="02" class="tile tile-friction" aria-labelledby="friction-title">
+    <span class="tile-num">02</span>
+    <span class="kicker">the friction</span>
+    <p class="numeral" id="friction-title" aria-label="237 notifications">237</p>
+    <p class="numeral-label">notifications a day on the average Indian Gen Z phone. Four matter.</p>
+    <p class="cite">Common Sense Media, &ldquo;Constant Companion&rdquo;, 2023.</p>
+    <svg class="annotation" viewBox="0 0 220 60" aria-hidden="true">
+      <path d="M10 30 C 60 12, 130 48, 210 20" fill="none" stroke="#FF5B2E" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M200 14 L 210 20 L 202 28" fill="none" stroke="#FF5B2E" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+    <p class="annot-text">the four that mattered</p>
+  </section>
+
+  <!-- 03 WHY CURRENT AI FAILS -->
+  <section id="03" class="tile tile-why" aria-labelledby="why-title">
+    <span class="tile-num">03</span>
+    <span class="kicker">why current AI fails</span>
+    <h2 id="why-title">Reactive assistants make the noise easier to read. They never close the loop.</h2>
+    <p>
+      Gemini Live, Apple Intelligence, Bixby, Pixel Assistant, Rabbit, and Humane all
+      start when the user starts. None of them see HRV, none read the WhatsApp project
+      group, none parse a UPI SMS, and none expose a step-by-step reasoning trace the
+      user can edit or reject. Aura closes that loop on-device.
+    </p>
+  </section>
+
+  <!-- 04 WEDGES -->
+  <section id="04" class="tile tile-wedges" aria-labelledby="wedges-title">
+    <span class="tile-num">04</span>
+    <span class="kicker">five wedges, shipped together</span>
+    <h2 id="wedges-title">What is unique to Aura</h2>
+    <ul class="wedges">
+      <li>
+        <h3>Indian context</h3>
+        <p>UPI, IRCTC, Zomato, Swiggy, Blinkit, BMTC, Gmail. Twelve bank SMS templates on the hot path.</p>
+      </li>
+      <li>
+        <h3>Biometric loop</h3>
+        <p>HRV from HealthKit or Health Connect feeds a Load Score that triggers a single quiet intervention.</p>
+      </li>
+      <li>
+        <h3>Glass-box trace</h3>
+        <p>Every action ships a Reasoning Trace with trigger, signals, candidates, chosen, and rationale.</p>
+      </li>
+      <li>
+        <h3>Silence as feature</h3>
+        <p>A daily Silence Budget caps proactive surfaces at three. Useful taps refund a token.</p>
+      </li>
+      <li>
+        <h3>Owned memory</h3>
+        <p>SQLite plus sqlite-vss, encrypted at rest. One tap to export, delete, or pause writes.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 05 ARCHITECTURE -->
+  <section id="05" class="tile tile-arch" aria-labelledby="arch-title">
+    <span class="tile-num">05</span>
+    <span class="kicker">architecture</span>
+    <h2 id="arch-title">Three layers. Four agents. One orchestrator.</h2>
+    <figure class="arch-figure">
+      <object type="image/svg+xml" data="../architecture/aura_architecture.svg" aria-label="Aura architecture diagram">
+        <div class="arch-placeholder" role="img" aria-label="Architecture diagram placeholder">
+          <p class="mono">[ aura_architecture.svg ]</p>
+          <p>Sense Layer &rarr; Signal Bus &rarr; Intelligence Layer (four agents and the orchestrator) &rarr; Experience Layer. Memory graph and audit log persist on-device.</p>
+        </div>
+      </object>
+      <figcaption>
+        Sense reads signals only on-device. Intelligence runs four agents and a Phi-3-mini
+        orchestrator with a seven-state LangGraph machine. Experience is phone, watch,
+        earbuds, tablet. Full document at <a href="../architecture.md">docs/architecture.md</a>.
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- 06 REASONING TRACE -->
+  <section id="06" class="tile tile-trace" aria-labelledby="trace-title">
+    <span class="tile-num">06</span>
+    <span class="kicker">a reasoning trace, every action</span>
+    <h2 id="trace-title">Glass-box, not black-box.</h2>
+<pre class="code" aria-label="Sample Reasoning Trace JSON"><code>{
+  &quot;trace_id&quot;: &quot;t_2026_05_07_0941_a3f1&quot;,
+  &quot;ts&quot;: &quot;2026-05-07T09:41:12+05:30&quot;,
+  &quot;trigger&quot;: &quot;hrv_drop_p20_with_typing_entropy_high&quot;,
+  &quot;signals&quot;: [
+    {&quot;source&quot;: &quot;HealthKit.HRV&quot;, &quot;rmssd_ms&quot;: 28, &quot;baseline_ms&quot;: 51},
+    {&quot;source&quot;: &quot;IME.entropy&quot;, &quot;bucket&quot;: &quot;high&quot;, &quot;window_s&quot;: 60},
+    {&quot;source&quot;: &quot;Notif.rate&quot;, &quot;per_min&quot;: 4.2}
+  ],
+  &quot;candidates&quot;: [
+    {&quot;kind&quot;: &quot;MUTE_GROUP_30M&quot;, &quot;score&quot;: 0.78},
+    {&quot;kind&quot;: &quot;BREATHE_PROMPT&quot;, &quot;score&quot;: 0.61},
+    {&quot;kind&quot;: &quot;DO_NOTHING&quot;,    &quot;score&quot;: 0.40}
+  ],
+  <span class="hi">&quot;chosen&quot;: &quot;MUTE_GROUP_30M&quot;</span>,
+  <span class="hi">&quot;rationale&quot;: &quot;HRV 45 percent below baseline; typing entropy high; group rate 4.2/min. Mute is reversible and does not consume the Silence Budget.&quot;</span>,
+  <span class="hi">&quot;confirm_required&quot;: false</span>,
+  &quot;outcome&quot;: &quot;dispatched&quot;
+}</code></pre>
+  </section>
+
+  <!-- 07 EVIDENCE -->
+  <section id="07" class="tile tile-evidence" aria-labelledby="evidence-title">
+    <span class="tile-num">07</span>
+    <span class="kicker">evidence</span>
+    <h2 id="evidence-title">Targets, not claims. Phase 2 publishes raw CSV.</h2>
+    <table class="kpi" aria-describedby="kpi-note">
+      <thead>
+        <tr><th scope="col">KPI</th><th scope="col">Target</th><th scope="col">Method</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Effort reduction</th><td>&ge; 30%</td><td>Stopwatch + tap count, paired baseline</td></tr>
+        <tr><th scope="row">Task completion</th><td>&ge; 90%</td><td>In-app telemetry across 5 tasks</td></tr>
+        <tr><th scope="row">Autonomy quality</th><td>&ge; 85%</td><td>3 raters, Likert 1&ndash;5, Cohen&rsquo;s kappa</td></tr>
+        <tr><th scope="row">Satisfaction</th><td>&ge; 4.5 / 5</td><td>Post-trial Likert</td></tr>
+        <tr><th scope="row">Stress reduction</th><td>HRV trend up</td><td>Spearman vs. self-rated stress</td></tr>
+        <tr><th scope="row">Willingness to pay &#8377;199/mo</th><td>&ge; 60%</td><td>Van Westendorp</td></tr>
+      </tbody>
+    </table>
+    <p id="kpi-note" class="note">Phase 1 numbers are projections. Phase 2 ships a 30-user quantitative pilot and an 8-user qualitative pilot from Thapar campus, with raw CSV in the repo.</p>
+  </section>
+
+  <!-- 08 TEAM -->
+  <section id="08" class="tile tile-team" aria-labelledby="team-title">
+    <span class="tile-num">08</span>
+    <span class="kicker">team &mdash; galaxy brain</span>
+    <h2 id="team-title">Two undergrads at Thapar. We are the user we design for.</h2>
+    <div class="team-grid">
+      <article class="card">
+        <h3>Shaurya Punj</h3>
+        <p class="role">co-founder, systems</p>
+        <p>Third-year ECE. Owns architecture, the Wellness agent, the KPI study, and pitch delivery. Runs LoRA training locally on an Alienware RTX 4080. Reads Apple HIG and Samsung Knox whitepapers in parallel.</p>
+        <dl class="meta">
+          <dt>Roll</dt><dd>102486013</dd>
+          <dt>Dept</dt><dd>ECE, Year 3</dd>
+          <dt>Email</dt><dd><a href="mailto:spunj_be23@thapar.edu">spunj_be23@thapar.edu</a></dd>
+          <dt>GitHub</dt><dd>ShAuRyA-Noodle</dd>
+        </dl>
+      </article>
+      <article class="card">
+        <h3>Shorya Gupta</h3>
+        <p class="role">co-founder, build</p>
+        <p>Second-year Computer Engineering. Owns the iOS app, the Comms, Calendar, and Finance agents, the memory graph, and the audit log. Cares about typed schemas, SQLite migrations, and SwiftUI at 60 fps on an iPhone 13.</p>
+        <dl class="meta">
+          <dt>Roll</dt><dd>1024037521</dd>
+          <dt>Dept</dt><dd>CompE, Year 2</dd>
+          <dt>Email</dt><dd><a href="mailto:sgupta9_be24@thapar.edu">sgupta9_be24@thapar.edu</a></dd>
+          <dt>GitHub</dt><dd>tba</dd>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <!-- 09 CONSTRAINTS -->
+  <section id="09" class="tile tile-constraints" aria-labelledby="constraints-title">
+    <span class="tile-num">09</span>
+    <span class="kicker">the constraints, said up front</span>
+    <h2 id="constraints-title">We name the box we built in.</h2>
+    <ul class="constraints">
+      <li><strong>Apple-only Phase 1+2.</strong> iOS reference build. Galaxy is the production target. Every Sense API maps 1:1 to Android.</li>
+      <li><strong>&#8377;2,000 budget.</strong> Print plus buffer. No flagship Galaxy phone in the lab.</li>
+      <li><strong>Two-person team.</strong> Galaxy Brain. No advisors, no contractors.</li>
+      <li><strong>12-week runway.</strong> Phase 1 blueprint, Phase 2 pilot, Phase 3 demo.</li>
+    </ul>
+  </section>
+
+  <!-- 10 LINKS -->
+  <section id="10" class="tile tile-links" aria-labelledby="links-title">
+    <span class="tile-num">10</span>
+    <span class="kicker">links</span>
+    <h2 id="links-title">Read the work.</h2>
+    <ul class="links">
+      <li><a href="https://github.com/ShAuRyA-Noodle/Combobulating">Repository &mdash; github.com/ShAuRyA-Noodle/Combobulating</a></li>
+      <li><a href="../../deck/phase1_blueprint/aura_phase1_blueprint.pdf">Phase 1 deck (PDF, placeholder)</a></li>
+      <li><a href="../architecture.md">Architecture document</a></li>
+      <li><a href="../threat_model.md">Threat model</a></li>
+      <li><a href="../decisions/">ADR index</a></li>
+      <li><a href="mailto:spunj_be23@thapar.edu">Contact &mdash; spunj_be23@thapar.edu</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="foot" role="contentinfo">
+  <p>Galaxy Brain &mdash; Thapar Institute of Engineering and Technology, Patiala.</p>
+  <p>Samsung EnnovateX 2026 submission. MIT licensed code. &copy; 2026.</p>
+</footer>
+
+</body>
+</html>

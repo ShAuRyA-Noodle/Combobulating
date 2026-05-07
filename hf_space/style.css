@@ -1,0 +1,188 @@
+/* Aura — HuggingFace Space CSS.
+ *
+ * Locked palette per deck_spec.md §0:
+ *   parchment  #FAF8F5
+ *   ink        #0E0E0E
+ *   accent     #FF5B2E
+ *
+ * Typography:
+ *   Fraunces (display) for h1 / hero only.
+ *   Inter Tight (UI) for everything else.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono&display=swap");
+
+:root {
+  --aura-bg: #FAF8F5;
+  --aura-ink: #0E0E0E;
+  --aura-accent: #FF5B2E;
+  --aura-line: #E8E2D8;
+  --aura-mute: #6F6A63;
+  --aura-card: #FFFFFF;
+}
+
+/* Page chrome ------------------------------------------------------------ */
+body, .gradio-container {
+  background: var(--aura-bg) !important;
+  color: var(--aura-ink) !important;
+  font-family: "Inter Tight", system-ui, sans-serif !important;
+}
+
+.gradio-container {
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+}
+
+/* Hero ------------------------------------------------------------------- */
+.aura-hero {
+  padding: 32px 8px 16px;
+  border-bottom: 1px solid var(--aura-line);
+  margin-bottom: 16px;
+}
+.aura-hero-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.aura-hero h1 {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 40px;
+  margin: 0;
+  letter-spacing: -0.02em;
+  color: var(--aura-ink);
+}
+.aura-tagline {
+  margin: 2px 0 0;
+  color: var(--aura-mute);
+  font-size: 15px;
+  letter-spacing: 0.01em;
+}
+.aura-disclaimer {
+  margin: 14px 0 0;
+  padding: 8px 12px;
+  border: 1px solid var(--aura-accent);
+  background: rgba(255, 91, 46, 0.06);
+  color: var(--aura-accent);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 6px;
+}
+
+/* Cards ------------------------------------------------------------------ */
+.aura-card {
+  background: var(--aura-card);
+  border: 1px solid var(--aura-line);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin: 12px 0;
+}
+.aura-card.error {
+  border-color: var(--aura-accent);
+  background: rgba(255, 91, 46, 0.05);
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.card-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--aura-mute);
+}
+.card-pill {
+  background: var(--aura-ink);
+  color: var(--aura-bg);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.card-pill.score-high { background: var(--aura-accent); }
+.card-pill.score-mid  { background: #C8A95B; }
+.card-pill.score-low  { background: #4A6B4F; }
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px 24px;
+  margin-bottom: 8px;
+}
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--aura-line);
+}
+.card-row .label { color: var(--aura-mute); font-size: 13px; }
+.card-row .value {
+  color: var(--aura-ink);
+  font-weight: 600;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+.card-rationale {
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: var(--aura-mute);
+  font-style: italic;
+}
+.card-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+}
+.card-list li {
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--aura-line);
+  font-size: 13px;
+}
+.card-list li.muted { color: var(--aura-mute); font-style: italic; }
+
+/* Tables ----------------------------------------------------------------- */
+.aura-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.aura-table th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--aura-mute);
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--aura-line);
+}
+.aura-table td {
+  padding: 8px;
+  border-bottom: 1px dashed var(--aura-line);
+  font-variant-numeric: tabular-nums;
+}
+.aura-table td.right, .aura-table th.right { text-align: right; }
+.aura-table td.muted { color: var(--aura-mute); font-style: italic; }
+.aura-table code {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+}
+
+/* Footer ----------------------------------------------------------------- */
+.aura-footer {
+  margin: 36px 0 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--aura-line);
+  font-size: 12px;
+  color: var(--aura-mute);
+  text-align: center;
+  letter-spacing: 0.02em;
+}

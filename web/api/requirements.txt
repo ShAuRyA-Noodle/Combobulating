@@ -1,0 +1,8 @@
+# Local FastAPI fallback server (venue stage demo).
+# Tier-3 of the fallback plan — runs offline on the team's Mac.
+
+fastapi==0.115.0
+uvicorn==0.30.6
+pydantic==2.7.4
+jsonschema==4.23.0
+python-dateutil==2.9.0.post0

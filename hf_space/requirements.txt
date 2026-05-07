@@ -1,0 +1,9 @@
+# HuggingFace Spaces — Aura showcase demo (CPU tier).
+# Only the *minimum* deps the agent reference stack needs. No ML models,
+# no LangGraph (Orchestrator's deterministic fallback path is used here),
+# no sentence-transformers (we ship the hash-bucket embedder).
+
+gradio==4.44.0
+pydantic==2.7.4
+jsonschema==4.23.0
+python-dateutil==2.9.0.post0

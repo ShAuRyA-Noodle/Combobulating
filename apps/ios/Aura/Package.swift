@@ -47,7 +47,11 @@ let package = Package(
 				.product(name: "KeychainAccess", package: "KeychainAccess")
 			],
 			path: "Sources/Aura",
-			exclude: ["Resources/Info.plist"],
+			exclude: [
+				"Resources/Info.plist",
+				"AuraMain.swift",
+				"AuraConfig.xcconfig"
+			],
 			resources: [
 				.process("Resources/Assets.xcassets")
 			]

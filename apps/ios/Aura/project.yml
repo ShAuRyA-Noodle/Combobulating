@@ -1,0 +1,154 @@
+# project.yml — xcodegen spec for the Aura iOS app.
+#
+# This spec produces `Aura.xcodeproj` from the existing SwiftUI source tree
+# under `Sources/Aura/`. It is the single source of truth for target
+# configuration; any change here should be re-applied with `xcodegen generate`.
+#
+# To regenerate the Xcode project from the command line:
+#   brew install xcodegen          # one-time
+#   cd apps/ios/Aura
+#   xcodegen generate
+#   open Aura.xcodeproj
+#
+# Bundle ID is locked to `com.galaxybrain.aura`. Do not change without an ADR.
+
+name: Aura
+
+options:
+  minimumXcodeGenVersion: "2.40.0"
+  createIntermediateGroups: true
+  defaultConfig: Debug
+  deploymentTarget:
+    iOS: "17.0"
+  groupSortPosition: top
+  generateEmptyDirectories: false
+  xcodeVersion: "16.0"
+
+configs:
+  Debug: debug
+  Release: release
+
+settings:
+  base:
+    SWIFT_VERSION: "5.10"
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    SWIFT_STRICT_CONCURRENCY: minimal
+    CLANG_ENABLE_MODULES: YES
+    SWIFT_TREAT_WARNINGS_AS_ERRORS: NO
+    DEVELOPMENT_TEAM: "" # Replace with your Apple Developer Team ID; see README.
+  configs:
+    Debug:
+      SWIFT_OPTIMIZATION_LEVEL: "-Onone"
+      SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+      ENABLE_TESTABILITY: YES
+    Release:
+      SWIFT_OPTIMIZATION_LEVEL: "-O"
+      SWIFT_COMPILATION_MODE: wholemodule
+
+packages:
+  GoogleSignIn-iOS:
+    url: https://github.com/google/GoogleSignIn-iOS
+    from: "7.0.0"
+  KeychainAccess:
+    url: https://github.com/kishikawakatsumi/KeychainAccess
+    from: "4.2.0"
+
+targets:
+  Aura:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: Sources/Aura
+        excludes:
+          - "Resources/Info.plist"
+    resources:
+      - path: Sources/Aura/Resources/Assets.xcassets
+    configFiles:
+      Debug: Sources/Aura/AuraConfig.xcconfig
+      Release: Sources/Aura/AuraConfig.xcconfig
+    dependencies:
+      - package: GoogleSignIn-iOS
+        product: GoogleSignIn
+      - package: GoogleSignIn-iOS
+        product: GoogleSignInSwift
+      - package: KeychainAccess
+        product: KeychainAccess
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.galaxybrain.aura
+        PRODUCT_NAME: Aura
+        CODE_SIGN_STYLE: Automatic
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_HEALTHKIT: YES
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SUPPORTS_MACCATALYST: NO
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait"
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        MARKETING_VERSION: "0.1.0"
+        CURRENT_PROJECT_VERSION: "1"
+    info:
+      path: Sources/Aura/Resources/Info.plist
+      properties:
+        CFBundleDisplayName: Aura
+        CFBundleShortVersionString: "0.1.0"
+        CFBundleVersion: "1"
+        LSRequiresIPhoneOS: true
+        NSHealthShareUsageDescription: "Aura reads HRV, sleep, heart rate, and step count to compute your Wellness Load Score on-device. Nothing leaves the device."
+        NSHealthUpdateUsageDescription: "Aura does not write to HealthKit."
+        NSCalendarsUsageDescription: "Aura reads your calendar so the Calendar agent can surface conflicts, travel-time alerts, and the morning brief. Calendar data stays on the device."
+        NSCalendarsFullAccessUsageDescription: "Aura reads your calendar so the Calendar agent can surface conflicts, travel-time alerts, and the morning brief. Calendar data stays on the device."
+        NSUserNotificationsUsageDescription: "Aura sends at most three proactive nudges per day, capped by the Silence Budget. You can lower the cap to zero in Settings."
+        NSContactsUsageDescription: "Aura uses contacts only to label senders in your inbox digest. Contact entries are not exported."
+        NSLocalNetworkUsageDescription: "Aura uses your local Wi-Fi to hand off the current card between your iPhone, iPad, and Mac. Nothing is sent to the internet."
+        NSBonjourServices:
+          - _aura-handoff._tcp
+          - _aura-handoff._udp
+        UIBackgroundModes:
+          - fetch
+          - processing
+        BGTaskSchedulerPermittedIdentifiers:
+          - com.galaxybrain.aura.refresh
+          - com.galaxybrain.aura.processing
+        UIRequiredDeviceCapabilities:
+          - arm64
+        UILaunchScreen:
+          UIColorName: ""
+          UIImageName: ""
+
+  AuraTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: Tests/AuraTests
+    dependencies:
+      - target: Aura
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.galaxybrain.aura.tests
+        BUNDLE_LOADER: "$(TEST_HOST)"
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Aura.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Aura"
+
+schemes:
+  Aura:
+    build:
+      targets:
+        Aura: all
+        AuraTests: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - AuraTests
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura — local stage demo</title>
+  <link rel="stylesheet" href="style.css" />
+  <!--
+    Fonts are optional. If we have internet we use Google Fonts, otherwise the
+    CSS falls back to system-ui / serif. Visual language matches deck_spec §0.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div id="root"></div>
+
+  <!--
+    Vendored React UMD. The README explains how to download these once. If the
+    file is missing on stage, the script falls back to a CDN — but we do NOT
+    rely on the CDN at the venue.
+  -->
+  <script src="vendor/react.production.min.js"></script>
+  <script src="vendor/react-dom.production.min.js"></script>
+  <script src="vendor/htm.umd.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

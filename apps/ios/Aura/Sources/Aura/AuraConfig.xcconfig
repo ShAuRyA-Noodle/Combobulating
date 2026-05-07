@@ -1,0 +1,28 @@
+// AuraConfig.xcconfig
+// Shared build settings between Debug and Release for the Aura iOS app.
+// Per-config overrides live in `project.yml`.
+
+// Identity
+PRODUCT_NAME = Aura
+PRODUCT_BUNDLE_IDENTIFIER = com.galaxybrain.aura
+
+// Platform
+IPHONEOS_DEPLOYMENT_TARGET = 17.0
+TARGETED_DEVICE_FAMILY = 1,2
+SUPPORTS_MACCATALYST = NO
+
+// Swift
+SWIFT_VERSION = 5.10
+SWIFT_STRICT_CONCURRENCY = minimal
+
+// Code signing — set DEVELOPMENT_TEAM in Xcode Signing & Capabilities, or
+// override here for CI. Automatic signing is the default for the team.
+CODE_SIGN_STYLE = Automatic
+
+// Asset catalog — placeholders ship today; replace with the final brand
+// glyph before TestFlight.
+ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon
+ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor
+
+// HealthKit capability — wire entitlements when the dev team is set.
+ENABLE_HEALTHKIT = YES

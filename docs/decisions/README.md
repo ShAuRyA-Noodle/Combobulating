@@ -22,7 +22,7 @@ Sections are required. Empty sections are not allowed; "no alternatives consider
 
 ## How to add an ADR
 
-1. Pick the next four-digit number. The current highest is 0010.
+1. Pick the next four-digit number. The current highest is 0011.
 2. Create `ADR-NNNN-<short-slug>.md`. Slug is lowercase, hyphen-separated, six words or fewer.
 3. Fill the five sections. Keep total length under 800 words. Cite specific lines of `plan.md` or `technical_spec.md` if the decision derives from them.
 4. Open a PR titled `docs(adr): NNNN <slug>`. Two reviewers required (`contributing.md`).
@@ -40,6 +40,7 @@ Sections are required. Empty sections are not allowed; "no alternatives consider
 - ADR-0008 — LangGraph state machine over free-form chat
 - ADR-0009 — Typed JSON tool calls; no natural-language inter-agent traffic
 - ADR-0010 — Pilot protocol (8 qualitative + 30 quantitative, unpaid)
+- ADR-0011 — No Apple Developer Program; Wizard-of-Oz lab study replaces TestFlight self-install
 
 ## Superseded ADRs
 

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Aura wordmark — concept logo
+  Width 800 px, height 400 px.
+  Wordmark "aura" rendered with Fraunces (with fallback to Georgia / serif).
+  Single sunset-orange (#FF5B2E) hand-drawn-feel underline, 4 px stroke.
+  Font fallback note: SVG references Fraunces by name; renderers without
+  Fraunces installed fall back to Georgia / Times / serif. For a fully
+  vectorised path-based wordmark, run `aura_logo.svg` through Figma
+  with Fraunces installed and "Outline Stroke" + "Flatten Selection",
+  then re-save. The current file keeps the wordmark as live <text> so
+  it remains editable.
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 800 400"
+     width="800" height="400"
+     role="img"
+     aria-label="Aura wordmark logo">
+  <title>Aura</title>
+  <desc>Editorial wordmark "aura" in Fraunces serif with a single sunset-orange hand-drawn underline.</desc>
+
+  <!-- Transparent background; renderers fill with page colour -->
+  <rect x="0" y="0" width="800" height="400" fill="none"/>
+
+  <!-- Wordmark "aura" — Fraunces 240 pt-equivalent, ink black -->
+  <text x="400" y="240"
+        text-anchor="middle"
+        font-family="Fraunces, 'Fraunces 9pt', Georgia, 'Times New Roman', serif"
+        font-size="240"
+        font-weight="400"
+        font-style="normal"
+        fill="#0E0E0E"
+        letter-spacing="-4">aura</text>
+
+  <!--
+    Sunset-orange hand-drawn-feel underline.
+    Slight quadratic curve to mimic a single ink pen stroke.
+    4 px stroke, round caps.
+  -->
+  <path d="M 230 290 Q 400 304 570 288"
+        stroke="#FF5B2E"
+        stroke-width="4"
+        stroke-linecap="round"
+        fill="none"/>
+</svg>
