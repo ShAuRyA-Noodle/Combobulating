@@ -126,8 +126,15 @@ class SilenceBudget:
             self.remaining = 0
 
     def maybe_reset(self, now: datetime) -> bool:
-        """Reset to ``total`` if the local-date rolled over since last reset."""
-        local_date = now.astimezone().date().isoformat()
+        """Reset to ``total`` if the local-date rolled over since last reset.
+
+        We honor the ``tzinfo`` on the supplied ``now`` instead of calling
+        ``.astimezone()`` — the latter silently re-anchors to the runtime
+        host's clock, which means a CI runner sitting in UTC will see a
+        caller-supplied IST `2026-05-07 23:50` as `2026-05-07 18:20 UTC`
+        and never observe the midnight rollover the caller intended.
+        """
+        local_date = now.date().isoformat() if now.tzinfo else now.astimezone().date().isoformat()
         if self.last_reset_date is None:
             self.last_reset_date = local_date
             return False
